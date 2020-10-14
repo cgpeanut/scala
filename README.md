@@ -17,7 +17,7 @@ OpenJDK 64-Bit Server VM (build 25.262-b10, mixed mode)
 
 Step 3: set the "JAVA_HOME" and "JRE_HOME" environment variables.
 
-$ sudo cp /etc/profile /etc/profile_backup $ always backup your orig files 
+$ sudo cp /etc/profile /etc/profile_backup $ always backup your orig files
 $ echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' | sudo tee -a /etc/profile
 $ echo 'export JRE_HOME=/usr/lib/jvm/jre' | sudo tee -a /etc/profile
 $ source /etc/profile
@@ -39,8 +39,9 @@ $ scala -version
 
 Step 5: Run scala in interactive shell and or execute a function to quit :q
 
-$ scala 
-scala> 1+2 
+$ scala
+
+scala> 1+2
 
 scala> println("Hello Scala")
 
@@ -57,3 +58,18 @@ object HelloWorld {
 $ scalac hello.scala
 $ scala HelloWorld
 
+Step 6: Embed Scala functions into a bash script, and then run the script using bash:
+
+vi script.sh
+Populate the file with:
+
+#!/bin/sh
+exec scala "$0" "$@"
+!#
+object HelloWorld extends App {
+  println("Hello world!")
+}
+
+HelloWorld.main(args)
+
+$ sh script.sh
