@@ -1,10 +1,10 @@
 # installing scala for centos 7
 
 Step 1: Update system
- $  sudo yum update -y && sudo reboot
+ $ sudo yum update -y && sudo reboot
 
-Step 2: Install OPenJDK Environement 
-  $ sudo yum install java-1.8.0-openjdk.x86_64
+Step 2: Install OpenJDK Environement
+ $ sudo yum install java-1.8.0-openjdk.x86_64
 
 validate Java runtime installation
   $ java -version
